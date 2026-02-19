@@ -1,11 +1,5 @@
 # Network Basic Concept
 
-## What it is
-**Net** is a *dynamic array*:
-- Stores elements in a **contiguous** memory block (like an array)
-- Automatically **resizes** when capacity is exceeded
-- Provides fast **random access** by index
-
 > IP 주소: 네트워크 통신을 할 때 송수신지의 Identity를 정하기 위한 논리적인 값이다.
 > 서브넷: 서브넷 마스크 설정을 통해 IP 주소에서 서브넷 주소를 만들어 내고, 같은 서브넷 주소끼리는 논리적으로 브로드캐스트 가능한 영역에 속하게 한다.
 > L2 스위치: 서로 다른 IP 주소 간의 데이터를 송수신 하기 위한 장비
