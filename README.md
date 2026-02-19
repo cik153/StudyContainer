@@ -1,5 +1,24 @@
 # Network Basic Concepts (IP / Subnet / L2 / L3)
 
+## 0) 네트워크 7계층 (OSI 7 Layers)
+OSI 7계층은 네트워크 통신을 **기능 단위로 나눠 설명**하기 위한 모델이다. 실제 인터넷은 TCP/IP 모델로 동작하지만, **문제 원인 파악/설계 설명**에 OSI가 자주 쓰인다.
+
+| Layer | 이름 | 주요 역할 | 대표 예시 | 장비/개념 |
+|---|---|---|---|---|
+| 7 | Application | 사용자/프로그램이 사용하는 네트워크 서비스 | HTTP, HTTPS, DNS, SSH | 브라우저, 서버 앱 |
+| 6 | Presentation | 표현/인코딩/암호화/압축 | TLS/SSL, UTF-8, JPEG | (주로 라이브러리/프로토콜) |
+| 5 | Session | 세션 관리(연결 유지/동기화) | RPC 세션 개념 등 | (주로 소프트웨어) |
+| 4 | Transport | 종단 간 전송, 포트, 신뢰성/흐름 제어 | TCP, UDP | L4 LB(로드밸런서) |
+| 3 | Network | IP 기반 라우팅, 서브넷, 경로 선택 | IPv4/IPv6, ICMP | 라우터, L3 스위치 |
+| 2 | Data Link | MAC 기반 프레임 전달, VLAN, 로컬 전달 | Ethernet(802.3), 802.1Q, ARP(IPv4에서 L2.5 느낌) | L2 스위치 |
+| 1 | Physical | 전기/광 신호, 케이블/무선, 비트 전송 | UTP, Fiber, Wi-Fi PHY | 허브(개념상), 케이블 |
+
+> 참고  
+> - **ARP**는 IPv4에서 “IP→MAC 해석”이라 L2와 L3 사이(흔히 L2.5라고도)로 설명되기도 한다.  
+> - 실무에서는 “L2 문제인지(LAN/VLAN/MAC), L3 문제인지(IP/라우팅)”를 이 모델로 빠르게 분리한다.
+
+---
+
 ## 1) IP 주소 (IPv4)
 - **IP 주소**는 네트워크에서 “어디로 보낼지”를 판단하기 위한 **논리적(L3) 주소**다.
 - IPv4는 `192.168.1.150`처럼 **점-십진 표기(dotted decimal notation)** 를 사용한다.
